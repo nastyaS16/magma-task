@@ -1,0 +1,5 @@
+.row {
+  padding-top: var(--small);
+  padding-bottom: var(--small);
+  padding-left: var(--small);
+}

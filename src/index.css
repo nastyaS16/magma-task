@@ -1,0 +1,12 @@
+:root {
+  --grey-light: #f1f1f2;
+  --white: #ffffff;
+
+  --small: 8px;
+  --medium: 16px;
+}
+
+body {
+  background-color: var(--grey-light);
+  font-family: Montserrat;
+}

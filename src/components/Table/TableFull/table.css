@@ -1,0 +1,14 @@
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  th,
+  td {
+    border-top: 1px solid var(--grey-light);
+    padding: var(--medium);
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
