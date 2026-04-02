@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import TableCell from "../TableCell/TableCell";
+import { useColumnResize } from "../../../hooks/useColumnResize";
 
 import "./tableHeader.css";
-import TableRow from "../TableRow/TableRow";
-import { useColumnResize } from "../../../hooks/useColumnResize";
 
 type Props = {};
 

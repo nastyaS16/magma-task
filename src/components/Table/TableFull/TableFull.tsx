@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+
 import TableRow from "../TableRow/TableRow";
+import TableHeader from "../TableHeader/TableHeader";
 
 import "./table.css";
-import TableHeader from "../TableHeader/TableHeader";
-import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 
 type Props = {
   setError: React.Dispatch<React.SetStateAction<string | null>>;
@@ -40,7 +40,7 @@ const TableFull = ({ setError }: Props) => {
         const data = res.filter((item: ans) => item?.sysId === "PROJECT_DEF");
         setData(data);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Ошибка загрузки данных");
       });
   }, []);
