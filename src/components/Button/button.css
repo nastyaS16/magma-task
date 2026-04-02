@@ -1,0 +1,7 @@
+.button {
+  background-color: var(--primary);
+  border: none;
+  padding: var(--small) var(--medium);
+  font-weight: 700;
+  color: var(--white);
+}

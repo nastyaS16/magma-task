@@ -2,30 +2,69 @@ import { useEffect, useState } from "react";
 import TableRow from "../TableRow/TableRow";
 
 import "./table.css";
+import TableHeader from "../TableHeader/TableHeader";
+import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 
-type Props = {};
+type Props = {
+  setError: React.Dispatch<React.SetStateAction<string | null>>;
+};
 
-const TableFull = (props: Props) => {
-  const [data, setData] = useState<User[]>([]);
+type ans = {
+  sysId?: string;
+  description: string;
+  title: string;
+  capitalConstructionType: {
+    description: string;
+  };
+  projectType: {
+    description: string;
+  };
+  finishDate: string;
+  gip: {
+    description: string;
+  };
+  $id: string;
+};
+
+const TableFull = ({ setError }: Props) => {
+  const [data, setData] = useState([]);
+
+  const formatDate = (finishDate: string) => {
+    return new Date(finishDate).toDateString();
+  };
 
   useEffect(() => {
-    fetch("/projects.json") // обращаемся к public как к корню
+    fetch("/projects.json")
       .then((res) => res.json())
-      .then(setData)
-      .catch(console.error);
+      .then((res) => {
+        const data = res.filter((item: ans) => item?.sysId === "PROJECT_DEF");
+        setData(data);
+      })
+      .catch((err) => {
+        setError("Ошибка загрузки данных");
+      });
   }, []);
   return (
-    <table className="table">
-      <tbody>
-        {data.map((data) => (
-          <TableRow
-            key={data["$id"]}
-            description={data.description}
-            title={data.title}
-          />
-        ))}
-      </tbody>
-    </table>
+    <>
+      <table className="table">
+        <TableHeader />
+        <tbody>
+          {data.map((data: ans) => (
+            <TableRow
+              key={data["$id"]}
+              description={data.description}
+              title={data.title}
+              contact={data?.gip?.description || ""}
+              capitalConstructionType={
+                data?.capitalConstructionType?.description || ""
+              }
+              typeBuilding={data?.projectType?.description || ""}
+              finishDate={formatDate(data?.finishDate)}
+            />
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 

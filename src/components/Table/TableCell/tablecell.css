@@ -1,8 +1,9 @@
 .cell {
   padding: 0 var(--small);
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: var(--text-small);
+  line-height: var(--medium);
   letter-spacing: 0px;
+  text-align: center;
+  overflow-wrap: break-word;
+  font-weight: 500;
 }

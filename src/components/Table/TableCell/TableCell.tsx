@@ -1,3 +1,5 @@
+import "./tablecell.css";
+
 type Props = {
   text: string;
 };

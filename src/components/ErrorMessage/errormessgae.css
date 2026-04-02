@@ -1,0 +1,13 @@
+.message {
+  position: fixed;
+  bottom: var(--medium);
+  right: var(--medium);
+
+  background-color: #ef4444; /* error */
+  color: white;
+
+  padding: var(--medium);
+  border-radius: var(--small);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

@@ -1,12 +1,20 @@
 :root {
   --grey-light: #f1f1f2;
   --white: #ffffff;
+  --primary: #287aff;
 
   --small: 8px;
   --medium: 16px;
+  --text-small: 12px;
 }
 
 body {
   background-color: var(--grey-light);
   font-family: Montserrat;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--medium);
 }

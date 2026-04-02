@@ -1,5 +1,4 @@
 .wrapper {
-  border-radius: var(--medium);
   padding: var(--medium) var(--small);
   background-color: var(--white);
 }

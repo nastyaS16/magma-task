@@ -1,0 +1,25 @@
+.header {
+  background-color: var(--grey-light);
+  font-weight: 600;
+  font-size: var(--medium);
+  text-align: center;
+  th {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  th:not(:last-child) {
+    border-right: 1px solid black;
+  }
+
+  .resizer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    user-select: none;
+  }
+}
